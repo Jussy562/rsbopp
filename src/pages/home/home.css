@@ -1,0 +1,10 @@
+.corporate-reg {
+    background-image: url('/fgnn.png');
+    background-color: rgb(104, 104, 243);
+    background-blend-mode: multiply;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.8;
+    
+}
