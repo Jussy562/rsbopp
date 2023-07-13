@@ -1,21 +1,26 @@
 import React from 'react';
+import { Button } from 'reactstrap';
 
-//  ${currentPage === page} ? active : ""
-function PageNumber({pageNums, currentPage, updateCurrentPage}) {
-
+function PageNumber({ pageNums, currentPage, updateCurrentPage }) {
   const pageNumHandler = () => updateCurrentPage(pageNums);
-  
+
   return (
-    <button 
-    className={`rounded-lg  flex justify-center items-center
-     bg-gray-300 px-3 py-6 h-5 w-8 text-[#40C8CC] font-bold
-     ${currentPage === pageNums ? 'active' : ''}
-    `}
-    onClick={pageNumHandler}
+    <Button
+      className={`rounded-lg d-flex justify-content-center align-items-center bg-secondary px-3 py-2 h-100 w-100 text-primary font-weight-bold ${
+        currentPage === pageNums ? 'active' : ''
+      }`}
+      onClick={pageNumHandler}
     >
-        {pageNums}
-    </button>
-  )
+      {pageNums}
+    </Button>
+  );
 }
 
-export default PageNumber
+export default PageNumber;
+
+
+
+
+
+
+

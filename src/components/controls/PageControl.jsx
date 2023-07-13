@@ -1,58 +1,46 @@
 import React from 'react';
-import './pageControl.css';
-
+import { Button, Table } from 'reactstrap';
 import { FaAngleLeft, FaAngleRight } from 'react-icons/fa';
 import PageNumber from './PagNumber';
 
-function PageControl({next, prev, pages, currentPage, updateCurrentPage}) {
+function PageControl({ next, prev, pages, currentPage, updateCurrentPage }) {
   return (
-    <div className='flex flex-row w-auto justify-end items-center'>
-        <button 
-        className='flex justify-center items-center w-auto 
-        h-auto py-4 px-4 bg-gray-300 hover:bg-gray-400 
-        rounded-xl mr-2 text-black'
+    <div className='d-flex justify-content-end align-items-center'>
+      <Button
+        className='d-flex justify-content-center align-items-center bg-secondary py-2 px-3 rounded-xl mr-2 text-dark'
         onClick={prev}
-        >
-            <FaAngleLeft />
-            
-        </button>
+      >
+         <FaAngleLeft />
+      </Button>
 
-        
-        <div className='hidden md:flex   flex-row w-auto h-auto gap-1
-        mr-2'>
-            {
-                pages.map((page) => {
-                    return(
-                    <li className='list-none w-full'
-                    
-        
-                    key={page}
-                    
-                    >
-                      <PageNumber
-                        pageNums={page}
-                        currentPage = {currentPage}
-                        updateCurrentPage = {updateCurrentPage}
-                       />
-                    </li>
-                )})
-            }
+      <div className='d-flex gap-1 mr-2'>
+        {pages.map((page) => (
+          <li className='list-unstyled' key={page}>
+            <PageNumber
+              pageNums={page}
+              currentPage={currentPage}
+              updateCurrentPage={updateCurrentPage}
+            />
+          </li>
+        ))}
+      </div>
 
-                    
-        </div>
-        
-
-        
-        <button 
-        className='flex justify-center items-center w-auto 
-        h-auto py-4 px-4 bg-gray-700 hover:bg-gray-600 
-        rounded-xl text-white'
+      <Button
+        className='d-flex justify-content-center align-items-center bg-dark py-2 px-3 rounded-xl text-white'
         onClick={next}
-        >
-            <FaAngleRight />
-        </button>
+      >
+        <FaAngleRight />
+      </Button>
     </div>
-  )
+  );
 }
 
-export default PageControl
+export default PageControl;
+
+
+
+
+
+
+
+
